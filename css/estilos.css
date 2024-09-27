@@ -1,0 +1,590 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color:#f0f0f0
+}
+
+body {
+    background-color: #EBF0FF;
+    background-position: center;
+    background-size: cover;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #00073d; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-menu {
+    line-height: 100px;
+}
+
+.btn-menu label {
+    color: #ffffff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.menu a:hover {
+    border-bottom: 2px solid #c7c7c7;
+    padding-bottom: 10px;
+}
+
+
+.container-menu {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+#btn-menu:checked ~ .container-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cont-menu {
+    width: 250px;
+    background: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    left: -250px; 
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#btn-menu:checked ~ .container-menu .cont-menu {
+    left: 0;
+}
+
+.cont-menu nav {
+    margin-top: 70px;
+}
+
+.cont-menu nav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #000000;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+}
+
+.cont-menu nav a:hover {
+    border-left: 5px solid #333;
+    background: #e0e0e0;
+}
+
+.close-menu {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #000000;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Estilos para la sección principal */
+.main-content {
+    padding-top: 150px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); 
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.info-section {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%; 
+    max-width: 800px; 
+    text-align: center;
+    margin: auto; 
+}
+
+.info-box {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.info-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    flex: 1;
+    margin: 0 10px; 
+}
+
+.info-item h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.info-item p {
+    font-size: 30px;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Estilos para el formulario */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%; 
+    max-width: 600px; 
+    text-align: center;
+    margin: auto; 
+    margin-top: 20px; 
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container form input,
+.form-container form textarea {
+    width: calc(100% - 20px); 
+    margin-bottom: 10px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-container form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color:#001d4b;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.form-container form button:hover {
+    background-color: #001d4b;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 40px auto 0 auto; 
+}
+
+.info-section {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.info-box {
+    margin-top: 20px;
+    max-width: 500px; 
+    margin: 0 auto; 
+}
+
+#cambio-contraseña-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #ffffff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffffff;
+}
+/* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Color de fondo */
+        }
+
+        header {
+            background-color: #001d4b; /* Color de fondo del encabezado */
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Estilos para la sección principal */
+        main {
+            padding: 20px;
+        }
+
+        .welcome-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alinea los elementos al inicio (izquierda) */
+            justify-content: center;
+            margin-left: -11px; /* Mueve el contenedor más hacia la izquierda */
+            text-align: left; /* Alinea el texto a la izquierda */
+            margin-bottom: 10px;
+        }
+        
+        
+        .logo-container {
+            display: flex;
+            justify-content: center; /* Centrará horizontalmente */
+            align-items: center;     /* Centrará verticalmente */
+            margin-bottom: 10px;     /* Espacio entre el logo y el texto */
+            height: 150px;           /* Ajusta la altura si es necesario */
+            margin-left: 5px; 
+        }
+        
+        .logo {
+            max-width: 160px; /* Puedes ajustar el tamaño si es necesario */
+            height: auto;
+        }
+        
+
+        .welcome-text h2 {
+            margin: 0;
+            color: #333; /* Color del texto */
+        }
+
+        .welcome-message {
+            margin: 5px 0;
+            color: #555; /* Color del mensaje */
+        }
+
+        .quick-access {
+            padding: 10px 15px;
+            background-color: #001d4b; /* Color del botón */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+         /* Estilo características */
+        .centered-title {
+            text-align: center;
+            margin: 20px 0; /* Ajusta los márgenes según sea necesario */
+        }
+        
+
+
+        /* Estilos para la sección de características */
+                
+        .features-container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: flex-start; /* Cambiado de center a flex-start */
+         gap: 0px; /* Espacio entre las tarjetas */
+        padding-left: -100px; /* Añadir un poco de padding si es necesario */
+}
+
+
+        .feature-card {
+            background: white; /* Color de fondo de la tarjeta */
+            border: 1px solid #ddd; /* Borde de la tarjeta */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 15px;
+            flex: 1 1 200px; /* Ancho flexible */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
+            margin: 10px; /* Margen entre tarjetas */
+        }
+
+        .feature-card h3 {
+            margin: 0 0 10px;
+            color: #001d4b; /* Color del título de la tarjeta */
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: #555; /* Color del texto de la tarjeta */
+        }
+        .quick-access {
+            padding: 10px 15px;
+            background-color: #000000; /* Color del botón */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.3s; /* Transición suave */
+        }
+        
+        /* Efecto hover para el botón de acceso rápido */
+        .quick-access:hover {
+            transform: scale(1.1); /* Aumenta el tamaño del botón al pasar el cursor */
+        }
+        
+        /* Efecto hover para las tarjetas de características */
+        .feature-card {
+            background: white; /* Color de fondo de la tarjeta */
+            border: 1px solid #ddd; /* Borde de la tarjeta */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 15px;
+            flex: 1 1 200px; /* Ancho flexible */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
+            margin: 10px; /* Margen entre tarjetas */
+            transition: transform 0.3s; /* Transición suave */
+        }
+        
+        /* Efecto hover para las tarjetas de características */
+        .feature-card:hover {
+            transform: scale(1.05); /* Aumenta el tamaño de la tarjeta al pasar el cursor */
+        }
+        /* Estilos generales para la sección de disponibilidad */
+.section {
+    padding: 40px 20px; /* Espacio alrededor de la sección */
+    background-color: #f9f9f9; /* Color de fondo suave */
+    text-align: center; /* Centrar texto */
+}
+
+h2 {
+    margin-bottom: 30px; /* Espacio debajo del título */
+    font-size: 2em; /* Tamaño del texto del encabezado */
+    color: #333; /* Color del texto del encabezado */
+}
+
+/* Contenedor de la lista de habitaciones */
+.room-list {
+    display: grid; /* Usar grid para organización */
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    gap: 20px; /* Espaciado entre cuadros */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+/* Estilo para cada tarjeta de habitación */
+.room-card {
+    background-color: white; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Ocultar contenido que se sale del cuadro */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s ease; /* Transición suave al interactuar */
+}
+
+.room-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+/* Imagen de la habitación */
+.room-card img {
+    width: 100%; /* Imagen ocupa todo el ancho del cuadro */
+    height: auto; /* Altura automática para mantener proporciones */
+}
+
+/* Estilos para el título de la habitación */
+.room-card h3 {
+    margin: 10px 0; /* Espacio vertical */
+    font-size: 1.5em; /* Tamaño del texto del título */
+    color: #007BFF; /* Color azul para el título */
+}
+
+/* Estilos para la descripción y el precio */
+.room-card p {
+    margin: 5px 15px; /* Espacio vertical y horizontal */
+    color: #555; /* Color del texto */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+
+/* Estilo específico para el precio */
+.price {
+    font-weight: bold; /* Negrita para el precio */
+    color: #e74c3c; /* Color rojo para el precio */
+    margin: 10px 15px; /* Espacio alrededor del precio */
+}
+
+/* Media query para responsividad */
+@media (max-width: 900px) {
+    .room-list {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 600px) {
+    .room-list {
+        grid-template-columns: 1fr; /* Una columna en pantallas más pequeñas */
+    }
+}
+
+/* Una columna en pantallas más pequeñas */
+
+.history-section {
+    padding: 20px;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.history-table th,
+.history-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    color: black; /* Establecer el color del texto en negro */
+}
+
+.history-table th {
+    background-color: #f4f4f4;
+    color: black; /* Color del texto en el encabezado también */
+}
+
+
+
+/* Estilos específicos para la página de soporte */
+
+
+.support-section {
+    background-color: #fff; /* Fondo blanco para el formulario */
+    padding: 20px; /* Espacio alrededor de la sección */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    margin: 50px auto; /* Centramos la sección y mantenemos margen superior */
+    max-width: 600px; /* Ancho máximo de la sección */
+    width: 80%; /* Ancho en porcentaje para mayor responsividad */
+    text-align: center; /* Centra el texto */
+}
+
+.support-section h2 {
+    margin-bottom: 20px; /* Espacio debajo del título */
+    color: #333; /* Color del texto del título */
+}
+
+.support-description {
+    margin-bottom: 20px; /* Espacio inferior para separación */
+    color: #333; /* Color del texto negro */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Margen inferior para separación entre grupos */
+}
+
+label {
+    display: block; /* Hace que las etiquetas ocupen toda la línea */
+    margin-bottom: 5px; /* Espacio inferior para etiquetas */
+    color: #333; /* Color negro para las etiquetas */
+}
+
+input, select, textarea {
+    width: 100%; /* Ancho completo para los campos */
+    padding: 10px; /* Relleno para los campos */
+    border: 1px solid #ccc; /* Borde del campo */
+    border-radius: 4px; /* Bordes redondeados para los campos */
+    margin-top: 5px; /* Espacio entre la etiqueta y el campo */
+}
+
+.submit-button {
+    padding: 10px 15px; /* Relleno para el botón */
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Suaviza el cambio de color */
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Color del botón al pasar el mouse */
+}

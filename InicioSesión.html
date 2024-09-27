@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReservePro - Login</title> 
+    <link rel="stylesheet" href="css/stilos.css">
+</head>
+<body>
+    
+<div class="container">
+    <div class="logo-container">
+        <img src="img/logo2.png" alt="Logo de ReservePro" class="logo">
+    </div>
+
+    <div class="form-box">
+        <div class="button-box">
+            <div id="elegir"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Iniciar Sesión</button>
+            <button type="button" class="toggle-btn" onclick="registrar()">Registrar</button>
+        </div>
+
+        <div class="redes-sociales">
+            <img src="img/fb.png" alt="icono_facebook">
+            <img src="img/google.png" alt="icono_google">
+        </div>
+
+        <form id="login" class="input-group" onsubmit="return validarCredenciales()">
+            <input type="text" id="loginUsuario" class="input-field" placeholder="Usuario" required>
+            <input type="password" id="loginContraseña" class="input-field" placeholder="Contraseña" required>
+            <input type="checkbox" class="check-box"> <span>Recordar Contraseña</span>
+            <button type="submit" class="submit-btn">Acceder</button>
+            <div id="error-message" style="color: red; margin-top: 10px;"></div> <!-- Mensaje de error -->
+        </form>
+
+        <form id="registrar" class="input-group">
+            <input type="text" class="input-field" placeholder="Usuario" required>
+            <input type="email" class="input-field" placeholder="Correo Electrónico" required>
+            <input type="password" class="input-field" placeholder="Contraseña" required>
+            <input type="checkbox" class="check-box"> <span>Acepto los términos y condiciones</span>
+            <button type="submit" class="submit-btn">Registrarse</button>
+        </form>
+    </div>
+</div>
+
+<div class="help-logo">
+    <img src="img/ayuda.png" alt="Logo de Ayuda" class="help-icon">
+</div>
+
+<script>
+var x = document.getElementById("login");
+var y = document.getElementById("registrar");
+var z = document.getElementById("elegir");
+
+function login() {
+    x.style.left = "50px";
+    y.style.left = "450px";
+    z.style.left = "0px";
+}
+
+function registrar() {
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    z.style.left = "120px";
+}
+
+// Arreglo de credenciales válidas
+const usuarios = [
+    { username: 'usuario1', password: 'contraseña1' },
+    { username: 'usuario2', password: 'contraseña2' }
+];
+
+// Función para validar credenciales
+function validarCredenciales() {
+    const usuarioIngresado = document.getElementById('loginUsuario').value;
+    const contraseñaIngresada = document.getElementById('loginContraseña').value;
+
+    // Buscar si las credenciales coinciden con alguno de los usuarios
+    const usuarioValido = usuarios.find(user => user.username === usuarioIngresado && user.password === contraseñaIngresada);
+
+    if (usuarioValido) {
+        // Si las credenciales son correctas, redirigir a la página principal (dashboard)
+        window.location.href = "dashboard.html"; // Redirige a la página principal
+        return false;  // Previene el envío del formulario para evitar el refresco
+    } else {
+        // Si las credenciales no coinciden, mostrar un mensaje de error
+        document.getElementById('error-message').textContent = 'Usuario o contraseña incorrectos';
+        return false;  // Previene el envío del formulario para evitar recargar la página
+    }
+}
+</script>
+</body>
+</html>

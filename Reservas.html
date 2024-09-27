@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida - ReservePro</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="btn-menu">
+                    <label for="btn-menu">☰</label>
+                </div>
+                <div class="logo">
+                    <h1>ReservePro</h1>
+                </div>
+                <nav class="menu">
+                    <a href="#">✖️ Cerrar sesión</a>
+                </nav>
+            </div>
+        </header>
+        <input type="checkbox" id="btn-menu">
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="Recepción.html">🏠 Recepción</a>
+                    <a href="Reservas.html">🛠️ Reservas</a>
+                    <a href="Historial.html">📝 Historial de reservas</a>
+                    <a href="Reportes.html">📊 Reportes</a>
+                    <a href="Configuracion.html">⚙️ Configuración</a>
+                    <a href="Soporte.html">⚙️ Soporte</a>
+                </nav>
+                <label for="btn-menu" class="close-menu">✖️</label>
+            </div>
+        </div>
+
+    <main class="main-content">
+            <section class="info-section">
+                <h2>Gestión de reservas</h2>
+                <form id="guestForm"></form>
+                    <div class="form-group">
+                    </div>
+    <main class="main-content">
+            <section class="info-section">
+                <h2>Registro de huéspedes</h2>
+                <form id="guestForm"></form>
+                        <div class="form-group">
+                            <label for="roomId">ID de la Habitación</label>
+                            <input type="text" id="roomId" name="roomId" required>
+                                </div>
+        
+                    <div class="form-group">
+                        <label for="description">Descripción</label>
+                        <input type="text" id="description" name="description" required>
+                    </div>
+        
+                    <div class="form-group half-width">
+                        <label for="roomType">Tipo de Habitación</label>
+                        <input type="text" id="roomType" name="roomType" required>
+                    </div>
+        
+                    <div class="form-group half-width">
+                        <label for="status">Estado</label>
+                        <select id="status" name="status">
+                            <option value="disponible">Disponible</option>
+                            <option value="ocupada">Ocupada</option>
+                            <option value="reservada">Reservada</option>
+                        </select>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="price">Precio por Noche</label>
+                        <input type="number" id="price" name="price" required>
+                    </div>
+        
+                    <button type="button" class="btn" onclick="openModal()">Registrar Cliente</button>
+                </form>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Botón Registrar Cliente */
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Estilos del Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 60%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        /* Cerrar el modal */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Estilos del formulario */
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="date"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Botón para abrir el modal -->
+<button class="btn" onclick="openModal()">Registrar Cliente</button>
+
+<!-- Modal para datos del cliente -->
+<div id="customerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Datos del Cliente</h3>
+        <form id="customerForm">
+            <div class="form-group half-width">
+                <label for="customerId">Identificación</label>
+                <input type="text" id="customerId" name="customerId" required>
+            </div>
+
+            <div class="form-group half-width">
+                <label for="fullName">Nombre Completo</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Celular</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Razón de Visita</label>
+                <input type="text" id="reason" name="reason">
+            </div>
+
+            <h4>Datos del Hospedaje</h4>
+
+            <div class="form-group half-width">
+                <label for="entryDate">Fecha de Entrada</label>
+                <input type="date" id="entryDate" name="entryDate" required>
+            </div>
+
+            <div class="form-group half-width">
+                <label for="exitDate">Fecha de Salida</label>
+                <input type="date" id="exitDate" name="exitDate" required onchange="calculateTotalNights()">
+            </div>
+
+            <div class="form-group half-width">
+                <label for="totalNights">Total Noches</label>
+                <input type="number" id="totalNights" name="totalNights" readonly>
+            </div>
+
+            <div class="form-group half-width">
+                <label for="discount">Descuento (%)</label>
+                <input type="number" id="discount" name="discount" value="0" onchange="calculateTotal()">
+            </div>
+
+            <div class="form-group total">
+                <label for="total">Total</label>
+                <input type="text" id="total" name="total" readonly>
+            </div>
+
+            <button type="button" onclick="saveReservation()">Guardar Reserva</button>
+        </form>
+    </div>
+</div>
+
+<!-- Tabla de historial de reservas -->
+<h2>Historial de Reservas</h2>
+<table id="reservationsTable">
+    <thead>
+        <tr>
+            <th>ID Habitación</th>
+            <th>Descripción</th>
+            <th>Tipo Habitación</th>
+            <th>Estado</th>
+            <th>Precio</th>
+            <th>Cliente</th>
+            <th>Teléfono</th>
+            <th>Fecha Entrada</th>
+            <th>Fecha Salida</th>
+            <th>Total Noches</th>
+            <th>Total Pago</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Las filas se agregarán dinámicamente aquí -->
+    </tbody>
+</table>
+
+<script>
+    // Abrir el modal de cliente
+    function openModal() {
+        document.getElementById('customerModal').style.display = 'flex';
+    }
+
+    // Cerrar el modal de cliente
+    function closeModal() {
+        document.getElementById('customerModal').style.display = 'none';
+    }
+
+    // Calcular el total de noches
+    function calculateTotalNights() {
+        const entryDate = new Date(document.getElementById('entryDate').value);
+        const exitDate = new Date(document.getElementById('exitDate').value);
+        const timeDiff = exitDate - entryDate;
+        const totalNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+        document.getElementById('totalNights').value = totalNights > 0 ? totalNights : 0;
+        calculateTotal();
+    }
+
+    // Calcular el total a pagar
+    function calculateTotal() {
+        const price = 100; // Precio fijo de ejemplo
+        const nights = parseInt(document.getElementById('totalNights').value);
+        const discount = parseFloat(document.getElementById('discount').value);
+
+        let total = price * nights;
+        total -= total * (discount / 100);
+
+        document.getElementById('total').value = total.toFixed(2);
+    }
+
+    // Guardar la reserva
+    function saveReservation() {
+        const customerForm = document.getElementById('customerForm');
+
+        const reservation = {
+            customerId: customerForm.customerId.value,
+            fullName: customerForm.fullName.value,
+            phone: customerForm.phone.value,
+            entryDate: customerForm.entryDate.value,
+            exitDate: customerForm.exitDate.value,
+            totalNights: customerForm.totalNights.value,
+            total: customerForm.total.value,
+        };
+
+        addReservationToTable(reservation);
+        closeModal();
+    }
+
+    // Agregar la reserva a la tabla
+    function addReservationToTable(reservation) {
+        const table = document.getElementById('reservationsTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        const customerIdCell = newRow.insertCell(0);
+        const fullNameCell = newRow.insertCell(1);
+        const phoneCell = newRow.insertCell(2);
+        const entryDateCell = newRow.insertCell(3);
+        const exitDateCell = newRow.insertCell(4);
+        const totalNightsCell = newRow.insertCell(5);
+        const totalCell = newRow.insertCell(6);
+
+        customerIdCell.textContent = reservation.customerId;
+        fullNameCell.textContent = reservation.fullName;
+        phoneCell.textContent = reservation.phone;
+        entryDateCell.textContent = reservation.entryDate;
+        exitDateCell.textContent = reservation.exitDate;
+        totalNightsCell.textContent = reservation.totalNights;
+        totalCell.textContent = reservation.total;
+    }
+</script>
+
+</body>
+</html>

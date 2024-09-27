@@ -1,0 +1,164 @@
+*{
+        margin: 0;
+        padding: 0;
+        font-size: 13px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.container{
+        height: 100%;
+        width: 100%;
+        background-color:#EBF0FF;        
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+
+}
+
+.logo-container {
+        text-align: center; /* Centra el contenido */
+        margin-top: -0px; /* Aumenta el espacio en la parte superior */
+    }
+    
+    .logo {
+        width: 100px; /* Tamaño del logotipo */
+        height: auto;
+    
+}
+.help-logo {
+        position: fixed;
+        bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+        right: 20px; /* Ajusta la distancia desde la derecha */
+    }
+    
+    .help-icon {
+        width: 40px; /* Tamaño del icono de ayuda */
+        height: auto;
+        cursor: pointer;
+    }
+    
+
+.form-box{
+width: 370px;
+height: 455px;
+position: relative;
+margin: 9px  auto 6% auto;
+background: #fff;
+padding: 5px;
+border-radius: 10px;
+overflow: hidden;
+
+
+}
+
+.button-box{
+width: 240px;
+margin: 30px auto;
+position: relative;
+box-shadow: 0 0 20px 9px #ece5e5;
+border-radius: 30px;
+}
+
+
+.toggle-btn{
+padding: 10px 22px;
+cursor: pointer;
+background: transparent;
+border: 0px;
+outline: none;
+position: relative;
+
+
+
+
+}
+
+#elegir{
+top: 0;
+left: 0;
+position: absolute;
+width: 120px;
+height: 100%;
+background: linear-gradient( to right, rgba(124, 142, 223, 0.308),rgba(211, 217, 247, 0.308));
+border-radius: 30px;
+transition: 0.8s;
+
+}
+
+.redes-sociales{
+        margin: 35px;
+        text-align: center;
+
+}
+
+.redes-sociales img{
+width: 30px;
+margin: 0 12px;
+box-shadow:  0 0 20px 9px #ece5e5;
+cursor: pointer;
+border-radius: 50%;
+        
+}
+
+
+
+.input-group{
+
+        top: 180px;
+        position: absolute;
+        width: 280px;
+        transition: 0.8s;
+
+}
+.input-field{
+width: 100%;
+padding: 10px 0;
+margin: 5px 0;
+border-left: 0;
+border-top: 0;
+border-right: 0;
+border-bottom: 2px solid #81D4FA;
+outline: none;
+background: transparent;
+
+}
+
+.submit-btn{
+width: 85%;
+padding: 10x 30px;
+cursor: pointer;
+display: block;
+margin: auto;
+background: linear-gradient( to right, rgba(124, 142, 223, 0.308),rgba(211, 217, 247, 0.308));
+border: 0px;
+outline: none;
+border-radius: 30px;
+}
+
+.check-box{
+margin: 30px 10px 30px 0;
+
+}
+
+span{
+    color: #0f171b;    
+        font-size: 12px;
+        bottom: 64px;
+        
+}
+
+#login{
+
+ left: 50px;
+
+
+}
+
+#registrar{
+
+        left: 450px;
+       
+       
+ }
+
+ 

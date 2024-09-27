@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Reservas - ReservePro</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <div class="logo">
+                <h1>ReservePro</h1>
+            </div>
+            <nav class="menu">
+                <a href="#">✖️ Cerrar sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="Recepción.html">🏠 Recepción</a>
+                <a href="Reservas.html">🛠️ Reservas</a>
+                <a href="Historial.html">📝 Historial de reservas</a>
+                <a href="Reportes.html">📊 Reportes</a>
+                <a href="Configuracion.html">⚙️ Configuración</a>
+                <a href="Soporte.html">⚙️ Soporte</a>
+            </nav>
+            <label for="btn-menu" class="close-menu">✖️</label>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="history-section">
+            <h2 class="centered-title">Historial de Reservas</h2>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>ID Reserva</th>
+                        <th>Nombre del Huésped</th>
+                        <th>Fecha de Entrada</th>
+                        <th>Fecha de Salida</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Juan Pérez</td>
+                        <td>2024-09-01</td>
+                        <td>2024-09-05</td>
+                        <td>Confirmada</td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>María López</td>
+                        <td>2024-09-10</td>
+                        <td>2024-09-12</td>
+                        <td>Cancelada</td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Carlos Fernández</td>
+                        <td>2024-09-15</td>
+                        <td>2024-09-20</td>
+                        <td>Confirmada</td>
+                    </tr>
+                    <tr>
+                        <td>004</td>
+                        <td>Ana García</td>
+                        <td>2024-09-18</td>
+                        <td>2024-09-22</td>
+                        <td>Check-in realizado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
